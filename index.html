@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrical Minds Forum</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&family=Rowdies&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <img src="icons/emf logo.png" alt="EMF Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="slideshow-container">
+        <div class="slide fade">
+            <div class="slide-content">
+                <h1>Electrical</h1>
+                <h1>Minds</h1>
+                <h1>Forum</h1>
+                <p>We step up, we transform</p>
+                <p>The Electrical Minds Forum (EMF) is a vibrant club dedicated to fostering innovation and collaboration
+                    among students in the Electrical Engineering department.</p>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&h=900" alt="EMF Slide 1">
+        </div>
+
+        <div class="slide fade">
+            <div class="slide-content">
+                <h1>Innovation</h1>
+                <h1>&</h1>
+                <h1>Excellence</h1>
+                <p>Pushing boundaries in electrical engineering</p>
+                <a href="event.html" class="btn">Our Events</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&h=900" alt="EMF Slide 2">
+        </div>
+
+        <div class="slide fade">
+            <div class="slide-content">
+                <h1>Join</h1>
+                <h1>Our</h1>
+                <h1>Community</h1>
+                <p>Be part of something extraordinary</p>
+                <a href="#contact" class="btn">Get Involved</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1517373116369-9bdb8cdc9f62?w=1600&h=900" alt="EMF Slide 3">
+        </div>
+
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Auto advance slides
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+
+    <section class="about" id="about">
+        <h2>Core Team</h2>
+        <div class="member-group">
+            <div class="member">
+                <img src="https://i.ibb.co/P4xmTc3/slider-img.jpg" alt="Staff-in-charge">
+                <p>Staff-in-charge</p>
+                <p>Dr. Arun Prasad</p>
+            </div>
+            <div class="member">
+                <img src="https://placebear.com/250/250" alt="Event Manager">
+                <p>Chairman</p>
+                <p>Ruben V Pulayath</p>
+            </div>
+            <div class="member">
+                <img src="https://loremflickr.com/250/250/dog" alt="Event Manager">
+                <p>Secretary</p>
+                <p>Didimos Mathew</p>
+            </div>
+            <div class="member">
+                <img src="https://placebeard.it/250/250" alt="Event Manager">
+                <p>Treasurer</p>
+                <p>Akash P B</p>
+            </div>
+            <div class="member">
+                <img src="https://baconmockup.com/250/250/" alt="Event Manager">
+                <p>Operatines Head</p>
+                <p>Atul B Prabhakar</p>
+            </div>
+            <div class="member">
+                <img src="https://placebeard.it/250/250" alt="Event Manager">
+                <p>Tech Head</p>
+                <p>Jacob Jipson</p>
+            </div>
+            <div class="member">
+                <img src="https://baconmockup.com/250/250/" alt="Event Manager">
+                <p>Tech Head</p>
+                <p>Aaron Scaria</p>
+            </div>
+            <div class="member">
+                <img src="https://placebeard.it/250/250" alt="Event Manager">
+                <p>General Coordinators</p>
+                <p>Ann Maria Pulikan</p>
+            </div>
+            <div class="member">
+                <img src="https://loremflickr.com/250/250/dog" alt="Event Manager">
+                <p>General Coordinators</p>
+                <p>Sebin Xavier</p>
+            </div>
+            <div class="member">
+                <img src="https://placebear.com/250/250" alt="Event Manager">
+                <p>Initiative Head</p>
+                <p>Angel Binoy</p>
+            </div>
+            <div class="member">
+                <img src="https://placebeard.it/250/250" alt="Event Manager">
+                <p>Initiative Head</p>
+                <p>Anirudhan B</p>
+            </div>
+            <div class="member">
+                <img src="https://placebear.com/250/250" alt="Event Manager">
+                <p>Magazine Head</p>
+                <p>Elsa Susan Jain</p>
+            </div>
+            <div class="member">
+                <img src="https://loremflickr.com/250/250/dog" alt="Event Manager">
+                <p>Magazine Head</p>
+                <p>Adhith Dhanaraj P L</p>
+            </div>
+            <div class="member">
+                <img src="https://baconmockup.com/250/250/" alt="Event Manager">
+                <p>Publicity Head</p>
+                <p>Shaun George</p>
+            </div>
+            <div class="member">
+                <img src="https://placebeard.it/250/250" alt="Event Manager">
+                <p>Publicity Head</p>
+                <p>Shilpa Reju Koloth</p>
+            </div>
+            <div class="member">
+                <img src="https://loremflickr.com/250/250/dog" alt="Event Manager">
+                <p>visit Head</p>
+                <p>Ashlin Lawernce</p>
+            </div>
+            <div class="member">
+                <img src="https://placebear.com/250/250" alt="Event Manager">
+                <p>Visit Head</p>
+                <p>Geon M S</p>
+            </div>
+            <div class="member">
+                <img src="https://baconmockup.com/250/250/" alt="Event Manager">
+                <p>Web Admin</p>
+                <p>Nived T S</p>
+            </div>
+            <div class="member">
+                <img src="https://loremflickr.com/250/250/dog" alt="Event Manager">
+                <p>Design Head</p>
+                <p>Abhinand N S</p>
+            </div>
+            <div class="member">
+                <img src="https://placebear.com/250/250" alt="Event Manager">
+                <p>Content Head</p>
+                <p>Anamika C B</p>
+            </div>
+            <div class="member">
+                <img src="https://baconmockup.com/250/250/" alt="Event Manager">
+                <p>Event Managers</p>
+                <p>Geethu B</p>
+            </div>
+            <div class="member">
+                <img src="https://loremflickr.com/250/250/dog" alt="Event Manager">
+                <p>Event Manager</p>
+                <p>Aparna Mohan N M</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="events2" id="events2">
+        <h2>Our Events</h2>
+        
+        <div class="event-group2">
+            <div class="event2">
+                <div class="event-image2">
+                    <img src="https://i.ibb.co/YZPnvyP/screencapture-file-C-Users-AARON-SCARIA-Downloads-Electrochip-Free-Website-Template-Free-CSS-com-ele.png" alt="Event 1" height="90">
+                </div>
+                <div class="event-details2">
+                    <h3>Event name</h3>
+                    <p>Event details ..</p>
+                </div>
+            </div>
+            <div class="event2">
+                <div class="event-image2">
+                    <img src="https://i.ibb.co/k6HKQqC/Whats-App-Image-2024-10-26-at-11-56-05-AM.jpg" alt="Event 1" height="90">
+                </div>
+                <div class="event-details2">
+                    <h3>Event name</h3>
+                    <p>Event details ..</p>
+                </div>
+            
+            </div>
+            <div class="event2">
+                <div class="event-image2">
+                    <img src="https://i.ibb.co/k6HKQqC/Whats-App-Image-2024-10-26-at-11-56-05-AM.jpg" alt="Event 1" height="90">
+                </div>
+                <div class="event-details2">
+                    <h3>Event name</h3>
+                    <p>Event details </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery2" id="gallery2">
+        <h2>Gallery</h2>
+        <div class="gallery-group">
+            <div class="gallery-item2">
+                <img src="icons/emf-gallery.png" alt="Gallery Image 1" >
+                <div class="image-title2">
+                    <h3>image title</h3>
+                </div>
+            </div>
+            <div class="gallery-item2">
+                <img src="icons/emf-gallery.png" alt="Gallery Image 2">
+                <div class="image-title2">
+                    <h3>Image title</h3>
+                </div>
+            </div>
+            <div class="gallery-item2">
+                <img src="icons/emf-gallery.png" alt="Gallery Image 3">
+                <div class="image-title2">
+                    <h3>image title</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="feedback" id="contact">
+        <h2>Contact</h2>
+        <form class="feedback-form" action="https://submit-form.com/6wEI7iK5v">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    
+<section class="custom-contact" id="custom-contact">
+    <div class="custom-contact-container">
+        <div class="custom-section">
+            
+        <section class="social-media">
+            <h2>Follow Us</h2>
+            <p>Follow Electrical Minds Forum on social media</p>
+        
+            <div class="social-icons">
+                <!-- Facebook Icon -->
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+        
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+        
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </section>
+
+
+        </div>
+
+        <div class="custom-section">
+            <h2>Location</h2>
+            <p>Model Engineering College<br>
+                Thrikkakara, Kochi 682021</p>
+        </div>
+
+        <div class="custom-section">
+            <h2>Contact</h2>
+            <p>Ruben V Pulayath: +91 8075710568</p>
+            <p>Contact us at: support@emfclub.com</p>
+        </div>
+    </div>
+
+    
+</section>
+    <footer>
+        <p>&copy; 2024 Electrical Minds Forum. All rights reserved.</p>
+        <p>Contact us at: support@emfclub.com</p>
+    </footer>
+    
+</body>
+
+</html>
